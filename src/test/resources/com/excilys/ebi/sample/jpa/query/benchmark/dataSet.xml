@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dataset.xsd">
+
+	<ARTIST ID="1" NAME="Katatonia" />
+	<SONG ID="1" TITLE="Leaders" ARTIST_ID="1" />
+	<SONG ID="2" TITLE="Deliberation" ARTIST_ID="1" />
+	<SONG ID="3" TITLE="Soil's Song" ARTIST_ID="1" />
+	<SONG ID="4" TITLE="My Twin" ARTIST_ID="1" />
+	<SONG ID="5" TITLE="Consternation" ARTIST_ID="1" />
+	<SONG ID="6" TITLE="Follower" ARTIST_ID="1" />
+	<SONG ID="7" TITLE="Rusted" ARTIST_ID="1" />
+	<SONG ID="8" TITLE="Increase" ARTIST_ID="1" />
+	<SONG ID="9" TITLE="July" ARTIST_ID="1" />
+	<SONG ID="10" TITLE="In the White" ARTIST_ID="1" />
+	<SONG ID="11" TITLE="The Itch" ARTIST_ID="1" />
+	<SONG ID="12" TITLE="Journey Through Pressure" ARTIST_ID="1" />
+
+</dataset>

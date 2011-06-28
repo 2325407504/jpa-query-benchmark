@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:p="http://www.springframework.org/schema/p" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+
+	<context:component-scan base-package="com.excilys.ebi.sample.jpa.query.benchmark.repository.impl" />
+	<tx:annotation-driven />
+	<jpa:repositories base-package="com.excilys.ebi.sample.jpa.query.benchmark.repository" />
+
+	<bean id="ds" class="org.apache.tomcat.jdbc.pool.DataSource" destroy-method="close" p:driverClassName="org.hsqldb.jdbcDriver" p:url="jdbc:hsqldb:mem:test"
+		p:username="sa" p:password="" />
+
+	<bean id="emf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="ds" />
+		<property name="persistenceProviderClass" value="org.hibernate.ejb.HibernatePersistence" />
+		<property name="jpaProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</prop>
+				<prop key="hibernate.hbm2ddl.auto">create-drop</prop>
+			</props>
+		</property>
+		<property name="packagesToScan" value="com.excilys.ebi.sample.jpa.query.benchmark.model" />
+	</bean>
+
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="emf" />
+	</bean>
+</beans>
