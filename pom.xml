@@ -6,16 +6,8 @@
 
 	<repositories>
 		<repository>
-			<id>jboss-releases</id>
-			<url>https://repository.jboss.org/nexus/content/repositories/releases</url>
-		</repository>
-		<repository>
 			<id>spring-milestone</id>
 			<url>http://maven.springframework.org/milestone</url>
-		</repository>
-		<repository>
-			<id>mysema-releases</id>
-			<url>http://source.mysema.com/maven2/releases</url>
 		</repository>
 		<repository>
 			<id>excilys-public</id>
@@ -32,10 +24,6 @@
 			<id>maven2-repository.dev.java.net</id>
 			<url>http://download.java.net/maven/2/</url>
 		</pluginRepository>
-		<pluginRepository>
-			<id>mysema-releases</id>
-			<url>http://source.mysema.com/maven2/releases</url>
-		</pluginRepository>
 	</pluginRepositories>
 
 	<properties>
@@ -43,17 +31,17 @@
 		<java.version>1.6</java.version>
 		<hibernate.version>3.6.7.Final</hibernate.version>
 		<hibernate-jpamodelgen.version>1.1.1.Final</hibernate-jpamodelgen.version>
-		<querydsl.version>2.2.0</querydsl.version>
+		<querydsl.version>2.2.1</querydsl.version>
 		<spring.version>3.1.0.M2</spring.version>
 		<spring-data-jpa.version>1.0.0.RELEASE</spring-data-jpa.version>
 		<cglib.version>2.2.2</cglib.version>
 		<javassist.version>3.15.0-GA</javassist.version>
 		<aspectj.version>1.6.11</aspectj.version>
 		<antlr.version>2.7.7</antlr.version>
-		<tomcat-jdbc.version>7.0.19</tomcat-jdbc.version>
+		<tomcat-jdbc.version>7.0.20</tomcat-jdbc.version>
 		<tomcat-slf4j.version>1.0.0</tomcat-slf4j.version>
 		<hsqldb.version>2.2.5</hsqldb.version>
-		<slf4j.version>1.6.1</slf4j.version>
+		<slf4j.version>1.6.2</slf4j.version>
 		<logback.version>0.9.29</logback.version>
 		<commons-logging.version>99.0-does-not-exist</commons-logging.version>
 		<commons-collections.version>3.2.1</commons-collections.version>
