@@ -28,7 +28,7 @@ import com.excilys.ebi.spring.dbunit.test.DataSetTestExecutionListener;
 @TestExecutionListeners({ DependencyInjectionTestExecutionListener.class, DataSetTestExecutionListener.class })
 @DataSet
 @BenchmarkOptions(benchmarkRounds = 1000, warmupRounds = 100)
-public class AbstractQueryTest {
+public abstract class AbstractQueryTest {
 
 	@Rule
 	public MethodRule benchmarkRun = new BenchmarkRule();
