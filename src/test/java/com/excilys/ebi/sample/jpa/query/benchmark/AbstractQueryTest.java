@@ -20,13 +20,14 @@ import com.carrotsearch.junitbenchmarks.BenchmarkRule;
 import com.excilys.ebi.sample.jpa.query.benchmark.model.Song;
 import com.excilys.ebi.sample.jpa.query.benchmark.repository.IRepository;
 import com.excilys.ebi.sample.jpa.query.benchmark.repository.ISpringDataRepository;
+import com.excilys.ebi.spring.dbunit.config.DBType;
 import com.excilys.ebi.spring.dbunit.test.DataSet;
 import com.excilys.ebi.spring.dbunit.test.DataSetTestExecutionListener;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("JPARepositoryTest-context.xml")
 @TestExecutionListeners({ DependencyInjectionTestExecutionListener.class, DataSetTestExecutionListener.class })
-@DataSet
+@DataSet(dbType = DBType.H2)
 @BenchmarkOptions(benchmarkRounds = 1000, warmupRounds = 100)
 public abstract class AbstractQueryTest {
 

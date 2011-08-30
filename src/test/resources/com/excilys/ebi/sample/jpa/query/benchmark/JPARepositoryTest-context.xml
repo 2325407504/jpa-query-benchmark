@@ -10,7 +10,7 @@
 	<tx:annotation-driven />
 	<jpa:repositories base-package="com.excilys.ebi.sample.jpa.query.benchmark.repository" />
 
-	<bean id="ds" class="org.apache.tomcat.jdbc.pool.DataSource" destroy-method="close" p:driverClassName="org.hsqldb.jdbcDriver" p:url="jdbc:hsqldb:mem:test"
+	<bean id="ds" class="org.apache.tomcat.jdbc.pool.DataSource" destroy-method="close" p:driverClassName="org.h2.Driver" p:url="jdbc:h2:mem:test;DB_CLOSE_ON_EXIT=FALSE"
 		p:username="sa" p:password="" />
 
 	<bean id="emf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
@@ -18,7 +18,7 @@
 		<property name="persistenceProviderClass" value="org.hibernate.ejb.HibernatePersistence" />
 		<property name="jpaProperties">
 			<props>
-				<prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
 				<prop key="hibernate.hbm2ddl.auto">create-drop</prop>
 			</props>
 		</property>
