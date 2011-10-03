@@ -24,7 +24,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.excilys.ebi.sample.jpa.query.benchmark.model.Song;
 
 @Transactional(readOnly = true)
-public interface ISpringDataRepository extends JpaRepository<Song, Integer> {
+public interface ISpringDataJPARepository extends JpaRepository<Song, Integer> {
 
 	@Query("from Song where artist.name=? order by title")
 	List<Song> getSongsByArtistName(String name);
