@@ -42,7 +42,12 @@ public class SimpleQueryTest extends AbstractQueryTest {
 	}
 
 	@Test
-	public void testSpringDataRepository() throws InterruptedException, ExecutionException {
-		asserts(springDataRepository.getSongsByArtistName("Katatonia"));
+	public void testSpringDataJPARepository() throws InterruptedException, ExecutionException {
+		asserts(springDataJPARepository.getSongsByArtistName("Katatonia"));
+	}
+
+	@Test
+	public void testSpringDataJPAQueryDslRepository() throws InterruptedException, ExecutionException {
+		asserts(springDataJPAQueryDslRepository.getSongsByArtistName("Katatonia"));
 	}
 }

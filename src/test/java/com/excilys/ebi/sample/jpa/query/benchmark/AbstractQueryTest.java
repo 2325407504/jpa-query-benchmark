@@ -19,7 +19,7 @@ import com.carrotsearch.junitbenchmarks.BenchmarkOptions;
 import com.carrotsearch.junitbenchmarks.BenchmarkRule;
 import com.excilys.ebi.sample.jpa.query.benchmark.model.Song;
 import com.excilys.ebi.sample.jpa.query.benchmark.repository.IRepository;
-import com.excilys.ebi.sample.jpa.query.benchmark.repository.ISpringDataRepository;
+import com.excilys.ebi.sample.jpa.query.benchmark.repository.ISpringDataJPARepository;
 import com.excilys.ebi.spring.dbunit.config.DBType;
 import com.excilys.ebi.spring.dbunit.test.DataSet;
 import com.excilys.ebi.spring.dbunit.test.DataSetTestExecutionListener;
@@ -28,7 +28,7 @@ import com.excilys.ebi.spring.dbunit.test.DataSetTestExecutionListener;
 @ContextConfiguration("JPARepositoryTest-context.xml")
 @TestExecutionListeners({ DependencyInjectionTestExecutionListener.class, DataSetTestExecutionListener.class })
 @DataSet(dbType = DBType.H2)
-@BenchmarkOptions(benchmarkRounds = 1000, warmupRounds = 100)
+@BenchmarkOptions(benchmarkRounds = 1000, warmupRounds = 1000)
 public abstract class AbstractQueryTest {
 
 	@Rule
@@ -47,7 +47,10 @@ public abstract class AbstractQueryTest {
 	protected IRepository queryDslRepository;
 
 	@Autowired
-	protected ISpringDataRepository springDataRepository;
+	protected ISpringDataJPARepository springDataJPARepository;
+
+	@Resource(name = "SpringDataJPAQueryDslRepository")
+	protected IRepository springDataJPAQueryDslRepository;
 
 	protected void asserts(List<Song> songs) {
 		Assert.assertTrue(songs.size() == 12);
