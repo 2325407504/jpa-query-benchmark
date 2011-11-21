@@ -35,7 +35,7 @@
 		<java.version>1.6</java.version>
 		<hibernate.version>3.6.8.Final</hibernate.version>
 		<hibernate-jpamodelgen.version>1.1.1.Final</hibernate-jpamodelgen.version>
-		<querydsl.version>2.2.4</querydsl.version>
+		<querydsl.version>2.2.5</querydsl.version>
 		<spring.version>3.1.0.M2</spring.version>
 		<spring-data-jpa.version>1.1.0.M1</spring-data-jpa.version>
 		<cglib.version>2.2.2</cglib.version>
@@ -53,8 +53,8 @@
 		<commons-lang.version>2.6</commons-lang.version>
 		<spring-dbunit.version>1.1.2</spring-dbunit.version>
 		<maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
-		<maven-annotation-plugin.version>2.0.4</maven-annotation-plugin.version>
-		<querydsl-apt-plugin.version>1.0.2</querydsl-apt-plugin.version>
+		<maven-processor-plugin.version>2.0.5</maven-processor-plugin.version>
+		<maven-apt-plugin.version>1.0.2</maven-apt-plugin.version>
 		<junit.version>4.10</junit.version>
 		<junit-benchmarks.version>0.3.0</junit-benchmarks.version>
 	</properties>
@@ -323,7 +323,7 @@
 				<plugin>
 					<groupId>org.bsc.maven</groupId>
 					<artifactId>maven-processor-plugin</artifactId>
-					<version>${maven-annotation-plugin.version}</version>
+					<version>${maven-processor-plugin.version}</version>
 					<executions>
 						<execution>
 							<goals>
@@ -342,7 +342,7 @@
 				<plugin>
 					<groupId>com.mysema.maven</groupId>
 					<artifactId>maven-apt-plugin</artifactId>
-					<version>${querydsl-apt-plugin.version}</version>
+					<version>${maven-apt-plugin.version}</version>
 					<executions>
 						<execution>
 							<goals>
