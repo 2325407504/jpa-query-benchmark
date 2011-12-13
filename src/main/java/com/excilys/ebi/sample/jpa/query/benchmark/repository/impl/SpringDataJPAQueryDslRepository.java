@@ -17,9 +17,6 @@ package com.excilys.ebi.sample.jpa.query.benchmark.repository.impl;
 
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-
 import org.springframework.data.jpa.repository.support.QueryDslRepositorySupport;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,11 +28,6 @@ import com.excilys.ebi.sample.jpa.query.benchmark.repository.IRepository;
 @Repository("SpringDataJPAQueryDslRepository")
 @Transactional(readOnly = true)
 public class SpringDataJPAQueryDslRepository extends QueryDslRepositorySupport implements IRepository {
-
-	@PersistenceContext
-	public void setEntityManager(EntityManager entityManager) {
-		super.setEntityManager(entityManager);
-	}
 
 	@Override
 	public List<Song> getSongsByArtistName(String name) {
