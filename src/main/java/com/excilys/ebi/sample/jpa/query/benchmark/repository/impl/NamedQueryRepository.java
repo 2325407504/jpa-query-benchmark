@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2011 eBusiness Information, Groupe Excilys (www.excilys.com)
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
  * the License at
- * 
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
@@ -17,10 +17,10 @@ package com.excilys.ebi.sample.jpa.query.benchmark.repository.impl;
 
 import java.util.List;
 
-import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.orm.jpa.support.JpaDaoSupport;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -29,22 +29,28 @@ import com.excilys.ebi.sample.jpa.query.benchmark.repository.IRepository;
 
 @Repository("NamedQueryRepository")
 @Transactional(readOnly = true)
-public class NamedQueryRepository extends JpaDaoSupport implements IRepository {
+public class NamedQueryRepository implements IRepository {
 
-	@Autowired
-	public NamedQueryRepository(EntityManagerFactory emf) {
-		setEntityManagerFactory(emf);
-	}
+	@PersistenceContext
+	private EntityManager em;
 
 	@Override
 	@SuppressWarnings("unchecked")
 	public List<Song> getSongsByArtistName(String name) {
-		return getJpaTemplate().findByNamedQuery("getSongsByArtistName", name);
+
+		Query query = em.createNamedQuery("getSongsByArtistName");
+		query.setParameter(1, name);
+
+		return query.getResultList();
 	}
 
 	@Override
 	@SuppressWarnings("unchecked")
 	public List<Song> getSongsBySameArtist(Integer songId) {
-		return getJpaTemplate().findByNamedQuery("getSongsBySameArtist", songId);
+
+		Query query = em.createNamedQuery("getSongsBySameArtist");
+		query.setParameter(1, songId);
+
+		return query.getResultList();
 	}
 }
