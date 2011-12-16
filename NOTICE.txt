@@ -1,2 +1,0 @@
-Benchmark JPA Query mode
-Copyright 2011 eBusiness Information, Groupe Excilys
