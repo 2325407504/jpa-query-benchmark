@@ -5,27 +5,11 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<repositories>
-		<!-- required as long as jandex is not in central -->
-		<repository>
-			<id>jboss</id>
-			<url>https://repository.jboss.org/nexus/content/groups/public</url>
-		</repository>
 		<repository>
 			<id>excilys-public</id>
 			<url>http://repository.excilys.com/content/repositories/public</url>
 		</repository>
 	</repositories>
-
-	<pluginRepositories>
-		<pluginRepository>
-			<id>jboss-releases</id>
-			<url>https://repository.jboss.org/nexus/content/repositories/releases</url>
-		</pluginRepository>
-		<pluginRepository>
-			<id>maven2-repository.dev.java.net</id>
-			<url>http://download.java.net/maven/2/</url>
-		</pluginRepository>
-	</pluginRepositories>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
