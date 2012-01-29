@@ -45,7 +45,7 @@ public class ComplexQueryTest extends AbstractQueryTest {
 	}
 
 	@Test
-	public void testSpringDataJPAQUeryDslRepository() {
+	public void testSpringDataJPAQueryDslRepository() {
 		asserts(springDataJPAQueryDslRepository.getSongsBySameArtist(2));
 	}
 }
