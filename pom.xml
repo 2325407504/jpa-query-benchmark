@@ -76,12 +76,10 @@
 				<version>${querydsl.version}</version>
 				<exclusions>
 					<exclusion>
-						<!-- relocated in com.google.code.findbugs -->
 						<groupId>net.sourceforge.findbugs</groupId>
 						<artifactId>jsr305</artifactId>
 					</exclusion>
 					<exclusion>
-						<!-- relocated in com.google.code.findbugs -->
 						<groupId>net.sourceforge.findbugs</groupId>
 						<artifactId>annotations</artifactId>
 					</exclusion>
@@ -101,16 +99,6 @@
 				<groupId>com.mysema.codegen</groupId>
 				<artifactId>codegen</artifactId>
 				<version>${codegen.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.google.code.findbugs</groupId>
-				<artifactId>jsr305</artifactId>
-				<version>${findbugs.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.google.code.findbugs</groupId>
-				<artifactId>annotations</artifactId>
-				<version>${findbugs.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
