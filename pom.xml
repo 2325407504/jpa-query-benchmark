@@ -23,7 +23,7 @@
 		<hibernate-jpamodelgen.version>1.2.0.CR1</hibernate-jpamodelgen.version>
 		<querydsl.version>2.3.1</querydsl.version>
 		<codegen.version>0.4.8</codegen.version>
-		<spring.version>3.1.0.RELEASE</spring.version>
+		<spring.version>3.1.1.RELEASE</spring.version>
 		<spring-data-jpa.version>1.1.0.RC1</spring-data-jpa.version>
 		<cglib.version>2.2.2</cglib.version>
 		<javassist.version>3.15.0-GA</javassist.version>
