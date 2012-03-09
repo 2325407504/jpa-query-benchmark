@@ -21,7 +21,7 @@
 		<java.version>1.6</java.version>
 		<hibernate.version>4.1.1.Final</hibernate.version>
 		<hibernate-jpamodelgen.version>1.2.0.Final</hibernate-jpamodelgen.version>
-		<querydsl.version>2.3.1</querydsl.version>
+		<querydsl.version>2.3.2</querydsl.version>
 		<codegen.version>0.4.8</codegen.version>
 		<spring.version>3.1.1.RELEASE</spring.version>
 		<spring-data-jpa.version>1.1.0.RC1</spring-data-jpa.version>
