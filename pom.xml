@@ -21,8 +21,8 @@
 		<java.version>1.6</java.version>
 		<hibernate.version>4.1.2.Final</hibernate.version>
 		<hibernate-jpamodelgen.version>1.2.0.Final</hibernate-jpamodelgen.version>
-		<querydsl.version>2.3.3</querydsl.version>
-		<codegen.version>0.4.10</codegen.version>
+		<querydsl.version>2.5.0</querydsl.version>
+		<codegen.version>0.4.11</codegen.version>
 		<spring.version>3.1.1.RELEASE</spring.version>
 		<spring-data-jpa.version>1.1.0.RC1</spring-data-jpa.version>
 		<cglib.version>2.2.2</cglib.version>
@@ -42,9 +42,11 @@
 		<junit-benchmarks.version>0.3.0</junit-benchmarks.version>
 		<hamcrest.version>1.2.1</hamcrest.version>
 
+		<hibernate-apt-dir>target/generated-sources/apt-hibernate</hibernate-apt-dir>
+		<querydsl-apt-dir>target/generated-sources/apt-querydsl</querydsl-apt-dir>
+
 		<maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
 		<maven-processor-plugin.version>2.0.5</maven-processor-plugin.version>
-		<maven-apt-plugin.version>1.0.2</maven-apt-plugin.version>
 		<maven-license-plugin.version>1.10.b1</maven-license-plugin.version>
 	</properties>
 
@@ -263,8 +265,8 @@
 			<artifactId>spring-data-jpa</artifactId>
 			<exclusions>
 				<exclusion>
-					<artifactId>log4j</artifactId>
-					<groupId>log4j</groupId>
+					<groupId>junit</groupId>
+					<artifactId>junit-dep</artifactId>
 				</exclusion>
 			</exclusions>
 		</dependency>
@@ -339,32 +341,16 @@
 					<version>${maven-processor-plugin.version}</version>
 					<executions>
 						<execution>
+							<phase>generate-sources</phase>
 							<goals>
 								<goal>process</goal>
 							</goals>
-							<phase>generate-sources</phase>
 							<configuration>
-								<outputDirectory>target/generated-sources/apt-hibernate</outputDirectory>
+								<outputDirectory>${hibernate-apt-dir}</outputDirectory>
 								<processors>
 									<processor>org.hibernate.jpamodelgen.JPAMetaModelEntityProcessor</processor>
+									<processor>com.mysema.query.apt.jpa.JPAAnnotationProcessor</processor>
 								</processors>
-							</configuration>
-						</execution>
-					</executions>
-				</plugin>
-				<plugin>
-					<groupId>com.mysema.maven</groupId>
-					<artifactId>maven-apt-plugin</artifactId>
-					<version>${maven-apt-plugin.version}</version>
-					<executions>
-						<execution>
-							<goals>
-								<goal>process</goal>
-							</goals>
-							<phase>generate-sources</phase>
-							<configuration>
-								<outputDirectory>target/generated-sources/apt-querydsl</outputDirectory>
-								<processor>com.mysema.query.apt.jpa.JPAAnnotationProcessor</processor>
 							</configuration>
 						</execution>
 					</executions>
@@ -400,7 +386,7 @@
 									<pluginExecutionFilter>
 										<groupId>com.mycila.maven-license-plugin</groupId>
 										<artifactId>maven-license-plugin</artifactId>
-										<versionRange>[1.9.0,)</versionRange>
+										<versionRange>[${maven-license-plugin},)</versionRange>
 										<goals>
 											<goal>format</goal>
 										</goals>
@@ -425,10 +411,6 @@
 			<plugin>
 				<groupId>org.bsc.maven</groupId>
 				<artifactId>maven-processor-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>com.mysema.maven</groupId>
-				<artifactId>maven-apt-plugin</artifactId>
 			</plugin>
 			<plugin>
 				<groupId>com.mycila.maven-license-plugin</groupId>
