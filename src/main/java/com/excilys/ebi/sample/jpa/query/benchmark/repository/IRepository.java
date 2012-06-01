@@ -21,7 +21,7 @@ import com.excilys.ebi.sample.jpa.query.benchmark.model.Song;
 
 public interface IRepository {
 
-	List<Song> getSongsByArtistName(String name);
+	List<Song> getSongsByArtistNameOrderBySongTitle(String name);
 
-	List<Song> getSongsBySameArtist(Integer songId);
+	List<Song> getSongsBySameArtistOrderBySongTitle(Integer songId);
 }

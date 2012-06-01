@@ -41,7 +41,7 @@ public class JPACriteriaRepository implements IRepository {
 	private EntityManager em;
 
 	@Override
-	public List<Song> getSongsByArtistName(final String name) {
+	public List<Song> getSongsByArtistNameOrderBySongTitle(final String name) {
 
 		CriteriaBuilder builder = em.getCriteriaBuilder();
 		CriteriaQuery<Song> query = builder.createQuery(Song.class);
@@ -53,7 +53,7 @@ public class JPACriteriaRepository implements IRepository {
 	}
 
 	@Override
-	public List<Song> getSongsBySameArtist(final Integer songId) {
+	public List<Song> getSongsBySameArtistOrderBySongTitle(final Integer songId) {
 
 		// select s.artist.songs from Song s where s.id=?
 

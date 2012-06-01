@@ -36,7 +36,7 @@ public class JPQLRepository implements IRepository {
 
 	@Override
 	@SuppressWarnings("unchecked")
-	public List<Song> getSongsByArtistName(String name) {
+	public List<Song> getSongsByArtistNameOrderBySongTitle(String name) {
 
 		Query query = em.createQuery("from Song where artist.name=? order by title");
 		query.setParameter(1, name);
@@ -46,7 +46,7 @@ public class JPQLRepository implements IRepository {
 
 	@Override
 	@SuppressWarnings("unchecked")
-	public List<Song> getSongsBySameArtist(Integer songId) {
+	public List<Song> getSongsBySameArtistOrderBySongTitle(Integer songId) {
 
 		Query query = em.createQuery("select s2 from Song s1 join s1.artist.songs s2 where s1.id=? order by s2.title");
 		query.setParameter(1, songId);

@@ -36,7 +36,7 @@ public class NamedQueryRepository implements IRepository {
 
 	@Override
 	@SuppressWarnings("unchecked")
-	public List<Song> getSongsByArtistName(String name) {
+	public List<Song> getSongsByArtistNameOrderBySongTitle(String name) {
 
 		Query query = em.createNamedQuery("getSongsByArtistName");
 		query.setParameter(1, name);
@@ -46,7 +46,7 @@ public class NamedQueryRepository implements IRepository {
 
 	@Override
 	@SuppressWarnings("unchecked")
-	public List<Song> getSongsBySameArtist(Integer songId) {
+	public List<Song> getSongsBySameArtistOrderBySongTitle(Integer songId) {
 
 		Query query = em.createNamedQuery("getSongsBySameArtist");
 		query.setParameter(1, songId);

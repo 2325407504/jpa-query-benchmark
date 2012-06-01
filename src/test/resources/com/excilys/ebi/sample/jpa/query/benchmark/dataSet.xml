@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-
-    Copyright 2011-2012 eBusiness Information, Groupe Excilys (www.excilys.com)
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-    		http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-
--->
+<!-- Copyright 2011-2012 eBusiness Information, Groupe Excilys (www.excilys.com) Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the
+	License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed
+	on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. -->
 <dataset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dataset.xsd">
 
 	<ARTIST ID="1" NAME="Katatonia" />
@@ -31,5 +17,25 @@
 	<SONG ID="10" TITLE="In the White" ARTIST_ID="1" />
 	<SONG ID="11" TITLE="The Itch" ARTIST_ID="1" />
 	<SONG ID="12" TITLE="Journey Through Pressure" ARTIST_ID="1" />
+
+	<ARTIST ID="2" NAME="Ghost Brigade" />
+	<SONG ID="13" TITLE="In The Woods" ARTIST_ID="2" />
+	<SONG ID="14" TITLE="Clawmaster" ARTIST_ID="2" />
+	<SONG ID="15" TITLE="Chamber" ARTIST_ID="2" />
+	<SONG ID="16" TITLE="Traces Of Liberty" ARTIST_ID="2" />
+	<SONG ID="17" TITLE="Divine Act Of Lunacy" ARTIST_ID="2" />
+	<SONG ID="18" TITLE="Grain" ARTIST_ID="2" />
+	<SONG ID="19" TITLE="Breakwater" ARTIST_ID="2" />
+	<SONG ID="20" TITLE="Cult Of Decay" ARTIST_ID="2" />
+	<SONG ID="21" TITLE="Torn" ARTIST_ID="2" />
+	<SONG ID="22" TITLE="Soulcarves" ARTIST_ID="2" />
+
+	<ARTIST ID="3" NAME="Long Distance Calling" />
+	<SONG ID="23" TITLE="Apparitions" ARTIST_ID="3" />
+	<SONG ID="24" TITLE="Black Paper Planes" ARTIST_ID="3" />
+	<SONG ID="25" TITLE="359°" ARTIST_ID="3" />
+	<SONG ID="26" TITLE="I Know You, Stanley Milgram!" ARTIST_ID="3" />
+	<SONG ID="27" TITLE="The Nearing Grave" ARTIST_ID="3" />
+	<SONG ID="28" TITLE="Sundown Highway" ARTIST_ID="3" />
 
 </dataset>

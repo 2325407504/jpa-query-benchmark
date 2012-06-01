@@ -36,14 +36,14 @@ public class QueryDslRepository implements IRepository {
 	private EntityManager em;
 
 	@Override
-	public List<Song> getSongsByArtistName(final String name) {
+	public List<Song> getSongsByArtistNameOrderBySongTitle(final String name) {
 
 		QSong song = QSong.song;
 		return new JPAQuery(em).from(song).where(song.artist.name.eq(name)).orderBy(song.title.asc()).list(song);
 	}
 
 	@Override
-	public List<Song> getSongsBySameArtist(final Integer songId) {
+	public List<Song> getSongsBySameArtistOrderBySongTitle(final Integer songId) {
 
 		QSong song1 = QSong.song;
 		QSong song2 = new QSong("song2");

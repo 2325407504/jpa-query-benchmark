@@ -24,11 +24,11 @@ import org.springframework.transaction.annotation.Transactional;
 import com.excilys.ebi.sample.jpa.query.benchmark.model.Song;
 
 @Transactional(readOnly = true)
-public interface ISpringDataJPARepository extends JpaRepository<Song, Integer> {
+public interface ISpringDataJPARepository extends JpaRepository<Song, Integer>, IRepository {
 
 	@Query("from Song where artist.name=? order by title")
-	List<Song> getSongsByArtistName(String name);
+	List<Song> getSongsByArtistNameOrderBySongTitle(String name);
 
 	@Query("select s2 from Song s1 join s1.artist.songs s2 where s1.id=? order by s2.title")
-	List<Song> getSongsBySameArtist(Integer songId);
+	List<Song> getSongsBySameArtistOrderBySongTitle(Integer songId);
 }

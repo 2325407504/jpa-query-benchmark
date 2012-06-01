@@ -42,9 +42,6 @@
 		<junit-benchmarks.version>0.3.0</junit-benchmarks.version>
 		<hamcrest.version>1.2.1</hamcrest.version>
 
-		<hibernate-apt-dir>target/generated-sources/apt-hibernate</hibernate-apt-dir>
-		<querydsl-apt-dir>target/generated-sources/apt-querydsl</querydsl-apt-dir>
-
 		<maven-compiler-plugin.version>2.4</maven-compiler-plugin.version>
 		<maven-processor-plugin.version>2.0.5</maven-processor-plugin.version>
 		<maven-license-plugin.version>1.10.b1</maven-license-plugin.version>
@@ -346,7 +343,7 @@
 								<goal>process</goal>
 							</goals>
 							<configuration>
-								<outputDirectory>${hibernate-apt-dir}</outputDirectory>
+								<outputDirectory>target/generated-sources/apt</outputDirectory>
 								<processors>
 									<processor>org.hibernate.jpamodelgen.JPAMetaModelEntityProcessor</processor>
 									<processor>com.mysema.query.apt.jpa.JPAAnnotationProcessor</processor>
