@@ -41,9 +41,9 @@
 		<junit.version>4.10</junit.version>
 		<junit-benchmarks.version>0.3.0</junit-benchmarks.version>
 		<hamcrest.version>1.2.1</hamcrest.version>
+		<lombok.version>0.11.0</lombok.version>
 
 		<maven-compiler-plugin.version>2.4</maven-compiler-plugin.version>
-		<maven-processor-plugin.version>2.0.5</maven-processor-plugin.version>
 		<maven-license-plugin.version>1.10.b1</maven-license-plugin.version>
 	</properties>
 
@@ -214,6 +214,11 @@
 				<artifactId>hamcrest-core</artifactId>
 				<version>${hamcrest.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -266,6 +271,11 @@
 					<artifactId>junit-dep</artifactId>
 				</exclusion>
 			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
 		</dependency>
 
 		<!-- runtime -->
@@ -330,27 +340,12 @@
 					<configuration>
 						<source>${java.version}</source>
 						<target>${java.version}</target>
+						<annotationProcessors>
+							<annotationProcessor>org.hibernate.jpamodelgen.JPAMetaModelEntityProcessor</annotationProcessor>
+							<annotationProcessor>com.mysema.query.apt.jpa.JPAAnnotationProcessor</annotationProcessor>
+							<annotationProcessor>lombok.core.AnnotationProcessor</annotationProcessor>
+						</annotationProcessors>
 					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.bsc.maven</groupId>
-					<artifactId>maven-processor-plugin</artifactId>
-					<version>${maven-processor-plugin.version}</version>
-					<executions>
-						<execution>
-							<phase>generate-sources</phase>
-							<goals>
-								<goal>process</goal>
-							</goals>
-							<configuration>
-								<outputDirectory>target/generated-sources/apt</outputDirectory>
-								<processors>
-									<processor>org.hibernate.jpamodelgen.JPAMetaModelEntityProcessor</processor>
-									<processor>com.mysema.query.apt.jpa.JPAAnnotationProcessor</processor>
-								</processors>
-							</configuration>
-						</execution>
-					</executions>
 				</plugin>
 				<plugin>
 					<groupId>com.mycila.maven-license-plugin</groupId>
@@ -399,16 +394,6 @@
 			</plugins>
 		</pluginManagement>
 		<plugins>
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<compilerArgument>-proc:none</compilerArgument>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.bsc.maven</groupId>
-				<artifactId>maven-processor-plugin</artifactId>
-			</plugin>
 			<plugin>
 				<groupId>com.mycila.maven-license-plugin</groupId>
 				<artifactId>maven-license-plugin</artifactId>
