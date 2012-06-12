@@ -39,12 +39,4 @@ public class Artist {
 
 	@OneToMany(mappedBy = "artist")
 	private Set<Song> songs = new HashSet<Song>();
-
-	public Set<Song> getSongs() {
-		return songs;
-	}
-
-	public void setSongs(Set<Song> songs) {
-		this.songs = songs;
-	}
 }

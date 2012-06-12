@@ -42,5 +42,4 @@ public class Song {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Artist artist;
-
 }
